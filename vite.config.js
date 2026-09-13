@@ -3,7 +3,10 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  base: "/snake_game/",
+
   plugins: [react(), tailwindcss()],
+
   server: {
     host: "0.0.0.0",
     port: 3000,
@@ -11,5 +14,10 @@ export default defineConfig({
     hmr: {
       port: 3000,
     },
+  },
+
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
   },
 });
